@@ -1,0 +1,84 @@
+[tool.poetry]
+name = "pythontemplate"
+version = "0.1.0"
+description = ""
+authors = ["kaki005 <u097498f@ecs.osaka-u.ac.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+plotly = "^5.22.0"
+numpy = "^2.0.0"
+matplotlib = "^3.9.1"
+wandb = "^0.17.4"
+omegaconf = "^2.3.0"
+tensorly = "^0.8.1"
+hydra-core = {git = "https://github.com/facebookresearch/hydra"}
+scikit-learn = "^1.5.1"
+tqdm = "^4.66.4"
+termcolor = "^2.4.0"
+seaborn = "^0.13.2"
+pandas = "^2.2.2"
+dataclasses-json = "^0.6.7"
+networkx = "^3.3"
+autopep8 = "^2.3.1"
+isort = "^5.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+[tool.ruff]
+# 1行の最大文字数
+line-length = 120
+
+[tool.ruff.lint]
+# チェックするエラーの種類
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+fixable = ["ALL"]
+# 除外するエラーの種類
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "W191",  # indentation contains tabs
+    "B904", # raise ... from ... になっていない場合のエラーを無視
+    "F401",   # imported but not used
+    "UP008",
+    "B007",
+]
+
+# ファイルごとのエラー除外
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+# isort の設定
+[tool.ruff.lint.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
+
+[tool.ruff.lint.pyupgrade]
+# Python3.8互換のための設定
+keep-runtime-typing = true
+
+
+
+[tool.ruff.lint.mccabe]
+max-complexity = 5
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

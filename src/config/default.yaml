@@ -1,0 +1,24 @@
+model:
+    name: "bert"
+    input_max_length: 32
+train:
+    lr: 1e-5
+    epochs: 10
+    batch_size: 16
+WandbConfig:
+    entity: "test"
+    project: "tutorial"
+    data_dir: "data/processed/"
+    output_dir: "results/bert/"
+
+
+
+hydra:
+  run:
+    dir: ./
+  output_subdir: null
+  job_logging:
+    version: 1
+    root:
+      handlers: [console]
+    disable_existing_loggers: false
