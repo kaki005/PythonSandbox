@@ -82,6 +82,8 @@ mypy-extensions==1.0.0
     # via typing-inspect
 netcdf4==1.7.1.post2
     # via wbml
+networkx==3.3
+    # via python-sandbox
 numpy==2.1.1
     # via algebra
     # via backends

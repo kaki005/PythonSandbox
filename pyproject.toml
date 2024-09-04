@@ -16,6 +16,7 @@ dependencies = [
     "pandas>=2.2.2",
     "tensorly>=0.8.1",
     "stheno>=1.4.1",
+    "networkx>=3.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
