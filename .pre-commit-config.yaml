@@ -5,4 +5,32 @@ repos:
       - id: ruff
         args:
           - --fix
+        name: ruff
+        description: "Run 'ruff' for extremely fast Python linting"
+        require_serial: true
+        additional_dependencies: []
+        minimum_pre_commit_version: "2.9.2"
+
       - id: ruff-format
+        name: ruff-format
+        language: python
+        description: "Run 'ruff format' for extremely fast Python formatting"
+        types_or: [python, pyi]
+        args: []
+        require_serial: true
+        additional_dependencies: []
+        minimum_pre_commit_version: "2.9.2"
+
+
+  -   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.0
+    hooks:
+      - id: mypy
+        name: mypy
+        description: "Run 'mypy' for Python linting"
+        entry: mypy
+        language: python
+        args: [--strict, --ignore-missing-imports]
+        require_serial: true
+        # Add types package list
+        additional_dependencies: []

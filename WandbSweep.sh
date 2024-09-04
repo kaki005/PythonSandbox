@@ -1,1 +1,1 @@
-poetry run wandb src/config/sweep.yaml
+rye run wandb src/config/sweep.yaml
