@@ -1,0 +1,20 @@
+model:
+    name: "bert"
+    input_max_length: 32
+train:
+    lr: 1e-5
+    epochs: 10
+    batch_size: 16
+WandbConfig:
+    entity: "test"
+    project: "tutorial"
+    data_dir: "data/processed/"
+    output_dir: "results/bert/"
+
+
+
+hydra:
+    output_subdir: null                         # .hydra 以下ファイルの生成停止
+defaults:
+    - override hydra/hydra_logging: disabled  # .hydra 以下ファイルの生成停止
+    - override hydra/job_logging: disabled      # ログ出力・記録停止
